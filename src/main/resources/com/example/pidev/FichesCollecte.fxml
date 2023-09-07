@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseClicked" prefHeight="585.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pidev.FichesCollecteController">
+    <children>
+        <GridPane layoutX="45.0" layoutY="60.0" prefHeight="90.0" prefWidth="96.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="21.0" prefWidth="89.0" text="Id user :" GridPane.halignment="LEFT" />
+                <Label prefHeight="21.0" prefWidth="97.0" text="Id demande : " GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                <Label prefHeight="21.0" prefWidth="46.0" text="Poids :" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <GridPane layoutX="135.0" layoutY="60.0" prefHeight="90.0" prefWidth="125.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="IdUserTF" prefHeight="31.0" prefWidth="150.0" />
+                <TextField fx:id="IdDemandeTF" GridPane.rowIndex="1" />
+                <TextField fx:id="PoidsTF" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <Button fx:id="btnNew" layoutX="29.0" layoutY="176.0" mnemonicParsing="false" text="New" />
+        <Button fx:id="btnUpdate" layoutX="198.0" layoutY="176.0" mnemonicParsing="false" onAction="#updateFiche" text="Update" />
+        <Button fx:id="btnDelete" layoutX="308.0" layoutY="176.0" mnemonicParsing="false" onAction="#deleteFiche" text="Delete " />
+        <Button fx:id="btnSave" layoutX="116.0" layoutY="176.0" mnemonicParsing="false" onAction="#addFicheCollecte" text="Save" />
+        <TableView fx:id="tableView" layoutX="54.0" layoutY="237.0" onMouseClicked="#mouseClicked" prefHeight="313.0" prefWidth="659.0">
+            <columns>
+                <TableColumn fx:id="colIdFiche" prefWidth="133.0" text="IdFiche" />
+                <TableColumn fx:id="colUser" prefWidth="178.0" text="Poids" />
+                <TableColumn fx:id="colIdDemande" prefWidth="191.0" text="IdUser " />
+                <TableColumn fx:id="colPoids" prefWidth="156.0" text="IdDemande" />
+            </columns>
+        </TableView>
+      <Label layoutX="290.0" layoutY="14.0" text="Fiches de collecte " textFill="#7ebc12">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="BtnDemandes" layoutX="668.0" layoutY="19.0" mnemonicParsing="false" onAction="#ChangeSceneToDemandes" text="Demandes" />
+    </children>
+</AnchorPane>
